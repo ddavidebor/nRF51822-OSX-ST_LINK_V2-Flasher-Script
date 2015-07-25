@@ -59,7 +59,7 @@ The S110 7.x version is suggested if you're developing with mbed.
 
 Place the .hex file in the ZIP your just downloaded in the download folder (together with the script) and rename it "softdevice.hex"
 
-After compiling on the mbed online ide, just run:
+After compiling on the mbed online ide the file will be automatically downloaded, and you can just run:
 
 ```Shell
 
@@ -68,7 +68,9 @@ cd /path/to/your/download/folder
 
 ```
 
-Openocd will remain open to allow the chip to run, otherwise it will stay idle. To exit from openocd, just close the terminal windows to kill the process and re-run the script to reflash the chip.
+Openocd will remain open to allow the chip to run, otherwise it will stay idle. To exit from openocd, just press control+c. You can now simply relaunch the script to re-flash your device.
+
+
 
 
 
