@@ -1,11 +1,11 @@
-#flasher script for nordic nRF51822 Bluetooth Low energy ic
+#Flasher script for nordic nRF51822 BLE IC
 
 ##What it does
-This script allow any people developing with the nRF51822 to easly flash the IC with custom firmware, using the ST-LINK V2 programmer available for less than 2$ on aliexpress and less than 8$ worldwide.
+This script allow any people developing with the nRF51822 to easly flash the IC with a custom firmware, using the ST-LINK V2 programmer available for less than 2$ on aliexpress and less than 8$ worldwide.
 
 The script automatically pick up the last .hex file added in the folder, so if you're developing with mbed (an online ide, that download automatically the .hex file after compiling) you can flash the chip istantaneusly.
 
-Generally, you will want to use the firmware from your download folder.
+Generally, you will want to use the script from your download folder.
 
 
 
@@ -55,7 +55,7 @@ chmod +x flasher.sh
 ```
 
 Then, download the softdevice (the bluetooth stack) for the nRF51822 on this page: https://www.nordicsemi.com/eng/Products/Bluetooth-Smart-Bluetooth-low-energy/nRF51822 
-The S110 7.x version is suggested if you're developing with mbed.
+The S110 7.x version is suggested if you're developing in the mbed online IDE.
 
 Place the .hex file in the ZIP your just downloaded in the download folder (together with the script) and rename it "softdevice.hex"
 
@@ -68,7 +68,7 @@ cd /path/to/your/download/folder
 
 ```
 
-Openocd will remain open to allow the chip to run, otherwise it will stay idle. To exit from openocd, just press control+c. You can now simply relaunch the script to re-flash your device.
+Openocd will remain open to allow the chip to run, otherwise it will stay idle. To exit from openocd, just press control+C . You can now simply relaunch the script to re-flash your device (up-arrow, then press enter on most terminal software).
 
 ##Doing it manually, without the script
 
@@ -88,10 +88,16 @@ halt
 nrf51 mass_erase 
 program path/to/your/softdevice.hex verify
 program path/to/your/firmware.hex
-resume
+resume 
 
 ```
 
+if you want to safely close openocd:
+```Shell
+
+shutdown
+
+```
 
 
 
