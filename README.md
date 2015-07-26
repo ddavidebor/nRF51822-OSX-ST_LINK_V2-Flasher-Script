@@ -70,7 +70,27 @@ cd /path/to/your/download/folder
 
 Openocd will remain open to allow the chip to run, otherwise it will stay idle. To exit from openocd, just press control+c. You can now simply relaunch the script to re-flash your device.
 
+##Doing it manually, without the script
 
+If you want to manually run the commands here they are. 
+
+In a terminal windows, run:
+```Shell
+
+openocd -f interface/stlink-v2.cfg -f target/nrf51.cfg -c "init"
+
+```
+Now leave the window open and in another one run in succession:
+```Shell
+
+telnet localhost 4444 #login into openocd commandline
+halt
+nrf51 mass_erase 
+program path/to/your/softdevice.hex verify
+program path/to/your/firmware.hex
+resume
+
+```
 
 
 
