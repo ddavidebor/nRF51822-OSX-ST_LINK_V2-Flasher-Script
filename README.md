@@ -99,5 +99,13 @@ shutdown
 
 ```
 
+##Wiring
+In order to flash the nrf51822 you only need to connect the power supply (GND and 3.3V) and SWCLK and SWDIO lines.
+There is no need to connect the RST or SWIM lines. Beware that the nrf51822 CANNOT be powered from 5V.
+
+##Running the IC without an attached programmer
+After you've programmed the IC, disconnect the SWCLK and SWDIO lines and disconnect and reconnect VCC or GND to power cycle it. Without the external clock from the programmer the IC will run normally.
+
+
 
 
