@@ -1,18 +1,18 @@
-#Flasher script for nordic nRF51822 BLE IC
+# Flasher script for nordic nRF51822 BLE IC
 
-##What it does
+## What it does
 This script allow any people developing with the nRF51822 to easly flash the IC with a custom firmware, using the ST-LINK V2 programmer available for less than 2$ on aliexpress and less than 8$ worldwide.
 
 The script automatically pick up the last .hex file added in the folder, so if you're developing with Mbed (an online ide, that download automatically the .hex file after compiling) you can flash the chip istantaneusly.
 
 Generally, you will want to use the script from your download folder.
 
-##Requirements
+## Requirements
 
 This script work only on OSX or Linux computers.
 you need to have openocd installed and a ST-LINK V2 clone programmer.
 
-##Install openocd
+## Install openocd
 
 To install openocd on Mac OSX first install homebrew, a lightweight package manager that don't mess with your sistem.
 
@@ -32,7 +32,7 @@ On ubuntu, you should be able to run
 sudo apt-get install openocd
 ```
 
-##Use the script
+## Use the script
 
 To use the script:
 
@@ -57,7 +57,7 @@ bash flasher.sh
 
 Openocd will remain open to allow the chip to run, otherwise it will stay idle. To exit from openocd, just press control+C . You can now simply relaunch the script to re-flash your device (up-arrow, then press enter on most terminal software).
 
-##Doing it manually, without the script
+## Doing it manually, without the script
 
 If you want to manually run the commands here they are.
 
@@ -83,9 +83,9 @@ if you want to safely close openocd:
 shutdown
 ```
 
-##Wiring
+## Wiring
 In order to flash the nrf51822 you only need to connect the power supply (GND and 3.3V) and SWCLK and SWDIO lines.
 There is no need to connect the RST or SWIM lines. Beware that the nrf51822 CANNOT be powered from 5V.
 
-##Running the IC without an attached programmer
+## Running the IC without an attached programmer
 After you've programmed the IC, disconnect the SWCLK and SWDIO lines and disconnect and reconnect VCC or GND to power cycle the nrf51822. Without the external clock from the programmer the IC will run normally.
